@@ -17,7 +17,6 @@
 - Servir o site: `mkdocs serve`
 
 # Blue - USING POETRY
-
-poetry run blue --check --diff nome_arquivo.py
+- poetry run blue --check --diff nome_arquivo.py
 
 
