@@ -6,6 +6,10 @@
   - [Dependencies dev-Group](#dependencies-dev-group)
   - [MkDocs](#mkdocs)
   - [Blue - USING POETRY](#blue---using-poetry)
+  - [Git](#git)
+  - [Markdown Preview Enhanced](#markdown-preview-enhanced)
+
+---
 
 ## Poetry
 
@@ -19,6 +23,8 @@
 2. Aplicando o `Poetry` em um projeto em andamento.
    - Iniciar o poetry: `poetry init`
    - Quando o comando poetry init for executado, o Poetry irá guiá-lo na criação do arquivo pyproject.toml para configurar o seu projeto.
+  
+---
 
 ## Extensions for vscode
 
@@ -32,10 +38,14 @@
 - vscode-pets
 - Rainbow CSV
 
+---
+
 ## Dependencies dev-Group
 
 1. Blue 
 2. isort
+
+---
 
 ## MkDocs
 
@@ -43,6 +53,22 @@
 - Iniciar o MkDocs: `mkdocs new .`
 - Servir o site: `mkdocs serve`
 
+---
+
 ## Blue - USING POETRY
 
 - poetry run blue --check --diff nome_arquivo.py
+
+---
+
+## Git
+
+- Alterar MENSAGEM Do último commit: ``git commit --amend -m "Novo texto do commit"``
+
+---
+
+## Markdown Preview Enhanced
+
+- Visualização previa do arquivo markdown: teclas `Ctrl + Shift + v`
+
+---
