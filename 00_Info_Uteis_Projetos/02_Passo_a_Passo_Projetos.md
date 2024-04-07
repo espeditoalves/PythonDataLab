@@ -1,6 +1,7 @@
 # Principais Ferramentas para Projetos
 
 - [Principais Ferramentas para Projetos](#principais-ferramentas-para-projetos)
+  - [teste](#teste)
   - [Poetry](#poetry)
   - [Extensions for vscode](#extensions-for-vscode)
   - [Dependencies dev-Group](#dependencies-dev-group)
@@ -10,7 +11,9 @@
   - [Markdown Preview Enhanced](#markdown-preview-enhanced)
 
 ---
+## teste
 
+fdf
 ## Poetry
 
 1. Iniciar um projeto do zero:
