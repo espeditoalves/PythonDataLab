@@ -67,12 +67,14 @@
 
 ## Git
 
-- Alterar MENSAGEM Do último commit: ``git commit --amend -m "Novo texto do commit"``
+- `git commit --amend -m "Novo texto do commit"`: Alterar MENSAGEM Do último commit
+- `git remote -v `:  listar os remotes atuais
+- `git remote set-url origin <nova_url_do_repositório>`: Muda a URL do remote
 
 ---
 
 ## Markdown Preview Enhanced
 
-- Visualização previa do arquivo markdown: teclas `Ctrl + Shift + v`
+- `Ctrl + Shift + v`: Visualização previa do arquivo markdown
 
 ---
