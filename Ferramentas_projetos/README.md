@@ -14,15 +14,19 @@
 ## Poetry
 
 1. Iniciar um projeto do zero:
-   - Iniciar um novo Projeto: `poetry new meu_projeto`
-   - Instalar novos pacotes: `poetry add nome_do_pacote`
-   - Mostrar os pacotes: `poetry show`
-   - Instalar as dependências: `poetry install`
-   - Gerar e atualizar o arquivo poetry.lock: `poetry lock`
+   - `poetry new meu_projeto`: Iniciar um novo Projeto
+   - `poetry add nome_do_pacote`: Instalar novos pacotes
+   - `poetry show`: Mostrar os pacotes
+   - `poetry install`: Instalar as dependências
+   - `poetry lock`: Gerar e atualizar o arquivo poetry.lock.
 
 2. Aplicando o `Poetry` em um projeto em andamento.
-   - Iniciar o poetry: `poetry init`
+   - `poetry init`: Iniciar o poetry
    - Quando o comando poetry init for executado, o Poetry irá guiá-lo na criação do arquivo pyproject.toml para configurar o seu projeto.
+
+3. Clone de repositório que utiliza `Poetry`.
+   - Faça o Clone do repositório, e verifique a existencia do arquivo `pyproject.toml`, caso existe o repositório tem ambiente virtual gerenciado pelo poetry.
+   - Utilze o comando `poetry install`, e as dependencias do `pyproject.toml` serão instaladas.
   
 ---
 
