@@ -2,10 +2,12 @@
 
 - [Principais Ferramentas para Projetos](#principais-ferramentas-para-projetos)
   - [Poetry](#poetry)
+    - [Executando Scripts Python com Poetry](#executando-scripts-python-com-poetry)
+      - [Como executar um script Python:](#como-executar-um-script-python)
+      - [Como executar verificações de estilo de código com Blue:](#como-executar-verificações-de-estilo-de-código-com-blue)
   - [Extensions for vscode](#extensions-for-vscode)
   - [Dependencies dev-Group](#dependencies-dev-group)
   - [MkDocs](#mkdocs)
-  - [Blue - USING POETRY](#blue---using-poetry)
   - [Git](#git)
   - [Markdown Preview Enhanced](#markdown-preview-enhanced)
 
@@ -27,7 +29,27 @@
 3. Clone de repositório que utiliza `Poetry`.
    - Faça o Clone do repositório, e verifique a existencia do arquivo `pyproject.toml`, caso existe o repositório tem ambiente virtual gerenciado pelo poetry.
    - Utilze o comando `poetry install`, e as dependencias do `pyproject.toml` serão instaladas.
-  
+
+### Executando Scripts Python com Poetry
+
+Se você já configurou o seu projeto com o **Poetry**, você encontrará um arquivo chamado `pyproject.toml` no diretório principal do seu projeto. Este arquivo contém as configurações e dependências do seu projeto.
+
+#### Como executar um script Python:
+
+Para executar um arquivo Python dentro do ambiente virtual gerenciado pelo Poetry, você pode usar o seguinte comando:
+
+```bash
+poetry run python <nome_script.py>
+```
+
+#### Como executar verificações de estilo de código com Blue:
+
+O **Blue** é uma ferramenta de formatação de código que ajuda a manter a consistência do estilo do seu código Python. Para executar o Blue e verificar as diferenças sem aplicar as mudanças, use o comando:
+
+```bash
+poetry run blue --check --diff <nome_script.py>
+```
+
 ---
 
 ## Extensions for vscode
@@ -56,12 +78,6 @@
 - Criar os arquivos: `poetry add --group dev mkdocs`
 - Iniciar o MkDocs: `mkdocs new .`
 - Servir o site: `mkdocs serve`
-
----
-
-## Blue - USING POETRY
-
-- poetry run blue --check --diff nome_arquivo.py
 
 ---
 
