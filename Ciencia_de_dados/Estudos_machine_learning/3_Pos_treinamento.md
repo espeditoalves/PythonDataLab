@@ -4,6 +4,13 @@
   - [Parâmetros Principais:](#parâmetros-principais)
   - [Saída:](#saída)
   - [Utilidade:](#utilidade)
+  - [Interpretação da Curva de Aprendizado](#interpretação-da-curva-de-aprendizado)
+    - [Curva de Treinamento (Vermelha):](#curva-de-treinamento-vermelha)
+    - [Curva de Validação (Verde):](#curva-de-validação-verde)
+    - [Subajustamento (Underfitting):](#subajustamento-underfitting)
+    - [Superajustamento (Overfitting):](#superajustamento-overfitting)
+    - [Conclusão](#conclusão)
+      - [**`Exemplificação de Plateau`**](#exemplificação-de-plateau)
     - [Leia mais](#leia-mais)
 
 # Avaliação de Métricas e Interpretação do Modelo
@@ -55,6 +62,43 @@ A função `learning_curve` é útil para:
 - Determinar se coletar mais dados de treinamento pode melhorar o desempenho do modelo.
 
 Em resumo, a função `learning_curve` é uma ferramenta valiosa para entender a capacidade de generalização do modelo em relação ao tamanho do conjunto de treinamento e para orientar decisões importantes de modelagem em machine learning.
+
+## Interpretação da Curva de Aprendizado
+
+### Curva de Treinamento (Vermelha):
+
+- **Inicialmente Alta e Estável:** Se a curva de treinamento começa alta e permanece estável, isso indica que o modelo está aprendendo bem com os dados de treinamento.
+- **Declínio Inicial:** Pode haver um declínio inicial na acurácia de treinamento à medida que o tamanho do conjunto de treinamento aumenta, o que é normal pois mais dados aumentam a complexidade do problema.
+
+### Curva de Validação (Verde):
+
+- **Inicialmente Baixa e Crescendo:** Se a curva de validação começa baixa e sobe, isso indica que o modelo está melhorando com mais dados de treinamento, o que é um bom sinal.
+- [**Plateau:**](#exemplificação-de-plateau) Se a curva de validação atinge um plateau e não melhora com mais dados, isso pode indicar que mais dados não vão melhorar o desempenho e pode ser necessário ajustar os hiperparâmetros do modelo.
+  
+![Goodfit_model1](image/learning_curve_goodfit1.png)
+![Goodfit_model2](image/learning_curve_goodfit2.png)
+
+### Subajustamento (Underfitting):
+
+- **Ambas as Curvas Baixas:** Se tanto a curva de treinamento quanto a curva de validação são baixas e próximas uma da outra, o modelo não está capturando bem os padrões dos dados. Pode ser necessário um modelo mais complexo.
+
+![Underfit_model1](image/learning_curve_underfit.png)
+
+### Superajustamento (Overfitting):
+
+- **Curva de Treinamento Alta e Curva de Validação Baixa:** Se a curva de treinamento é alta e a curva de validação é significativamente mais baixa, o modelo está se ajustando demais aos dados de treinamento e não está generalizando bem. Técnicas como regularização, redução da complexidade do modelo ou aumento do conjunto de dados podem ajudar.
+
+![Overfit_model1](image/learning_curve_overfit1.png)
+![Overfit_model2](image/learning_curve_overfit2.png)
+
+### Conclusão
+
+A análise da curva de aprendizado ajuda a identificar o comportamento do modelo e decidir os próximos passos para melhorar seu desempenho. Dependendo do padrão observado nas curvas de treinamento e validação, você pode ajustar o modelo, coletar mais dados ou alterar a abordagem de pré-processamento e engenharia de características.
+
+#### **`Exemplificação de Plateau`**
+
+Imagine que você está treinando um modelo de regressão logística e está monitorando a acurácia da validação ao longo do tempo ou conforme você aumenta a quantidade de dados de treinamento. Inicialmente, a acurácia da validação melhora à medida que você adiciona mais dados, mas eventualmente, ela começa a se estabilizar e atinge um ponto onde não há mais melhorias significativas, mesmo com a adição de mais dados. Esse ponto de estabilização é chamado de **plateau**.
+
 
 ### Leia mais
 

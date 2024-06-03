@@ -38,11 +38,11 @@ build/
 *.db
 
 # Arquivos de mídia
-*.jpg
-*.jpeg
-*.png
-*.gif
-*.ico
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
+# *.ico
 
 # Cache e arquivos temporários de desenvolvimento
 __pycache__/
