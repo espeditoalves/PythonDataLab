@@ -71,9 +71,4 @@ Esta curva demonstra como o desempenho do modelo melhora à medida que o algorit
 
 Essas curvas adicionais fornecem uma visão mais abrangente do comportamento do modelo durante o treinamento e são úteis para análise detalhada e refinamento de modelos de machine learning.
 
----
-3. **Ajuste Adicional (Fine-tuning):** Refinar o modelo, se necessário, com base nos resultados da avaliação.
 
-4. **Implantação:** Implementar o modelo em um ambiente de produção para uso prático, se aplicável.
-
-5. **Monitoramento Contínuo:** Monitorar o desempenho do modelo em produção e realizar atualizações conforme necessário.

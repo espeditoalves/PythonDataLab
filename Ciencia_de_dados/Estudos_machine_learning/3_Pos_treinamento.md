@@ -4,6 +4,7 @@
   - [Parâmetros Principais:](#parâmetros-principais)
   - [Saída:](#saída)
   - [Utilidade:](#utilidade)
+    - [Leia mais](#leia-mais)
 
 # Avaliação de Métricas e Interpretação do Modelo
 
@@ -54,3 +55,15 @@ A função `learning_curve` é útil para:
 - Determinar se coletar mais dados de treinamento pode melhorar o desempenho do modelo.
 
 Em resumo, a função `learning_curve` é uma ferramenta valiosa para entender a capacidade de generalização do modelo em relação ao tamanho do conjunto de treinamento e para orientar decisões importantes de modelagem em machine learning.
+
+### Leia mais
+
+* [Learning_Curves](_Notebooks_teoria_aplicada\learning_curves.md)
+
+* [Notebook: Learning_Curves_2](_Notebooks_teoria_aplicada\Learning_curve_2.ipynb)
+---
+3. **Ajuste Adicional (Fine-tuning):** Refinar o modelo, se necessário, com base nos resultados da avaliação.
+
+4. **Implantação:** Implementar o modelo em um ambiente de produção para uso prático, se aplicável.
+
+5. **Monitoramento Contínuo:** Monitorar o desempenho do modelo em produção e realizar atualizações conforme necessário.
