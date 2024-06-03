@@ -31,4 +31,4 @@ A metodologia CRISP-DM (Cross-Industry Standard Process for Data Mining) é um e
 
 6. **Implantação** *(Deployment)* A fase final da metodologia CRISP-DM é a implantação do modelo em um ambiente de produção. Integramos o modelo aos sistemas existentes, monitoramos seu desempenho contínuo e garantimos a adoção pela equipe de negócios.
 
-![image_crisp_dm](image/Crisp_dm.png)
+![image_crisp_dm](image/Crisp_dm2.png)
