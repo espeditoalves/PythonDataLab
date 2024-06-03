@@ -1,3 +1,56 @@
 ide-config
-tem_que_comitar_aqui.txt
 Poetry.lock
+.csv
+
+# Arquivos temporários
+*~
+
+# Arquivos de backup
+*.bak
+*.swp
+
+# Arquivos de log e registros
+*.log
+logs/
+
+# Arquivos de compilação
+*.o
+*.out
+*.exe
+
+# Arquivos de ambiente e configuração
+.env
+venv/
+.envrc
+
+# Dependências e pacotes
+/node_modules/
+/bower_components/
+/pip-packages/
+*.egg-info/
+dist/
+build/
+
+# Arquivos de dados
+*.csv
+*.json
+*.sqlite
+*.db
+
+# Arquivos de mídia
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.ico
+
+# Cache e arquivos temporários de desenvolvimento
+__pycache__/
+.cache/
+.idea/
+.vscode/
+*.bak
+
+# Outros
+.DS_Store
+Thumbs.db
