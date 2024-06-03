@@ -1,9 +1,10 @@
 
-- [Avaliação de Métricas e Interpretação do Modelo](#avaliação-de-métricas-e-interpretação-do-modelo)
-- [Função `learning_curve`](#função-learning_curve)
-  - [Parâmetros Principais:](#parâmetros-principais)
-  - [Saída:](#saída)
-  - [Utilidade:](#utilidade)
+- [5 - Avaliação (Evaluation)](#5---avaliação-evaluation)
+  - [Avaliação de Métricas e Interpretação do Modelo](#avaliação-de-métricas-e-interpretação-do-modelo)
+  - [Função `learning_curve`](#função-learning_curve)
+    - [Parâmetros Principais:](#parâmetros-principais)
+    - [Saída:](#saída)
+    - [Utilidade:](#utilidade)
   - [Interpretação da Curva de Aprendizado](#interpretação-da-curva-de-aprendizado)
     - [Curva de Treinamento (Vermelha):](#curva-de-treinamento-vermelha)
     - [Curva de Validação (Verde):](#curva-de-validação-verde)
@@ -11,9 +12,15 @@
     - [Superajustamento (Overfitting):](#superajustamento-overfitting)
     - [Conclusão](#conclusão)
       - [**`Exemplificação de Plateau`**](#exemplificação-de-plateau)
-    - [Leia mais](#leia-mais)
+  - [Leia mais](#leia-mais)
+- [6.0 Implantação (Deployment)](#60-implantação-deployment)
 
-# Avaliação de Métricas e Interpretação do Modelo
+# 5 - Avaliação (Evaluation)
+
+A avaliação dos modelos desenvolvidos é crucial para medir sua qualidade e desempenho. Nesta fase, utilizamos métodos como validação cruzada e métricas de desempenho para avaliar o quão bem os modelos se saem em dados não vistos. Com base nessa avaliação, podemos ajustar e aprimorar os modelos, se necessário.
+
+
+## Avaliação de Métricas e Interpretação do Modelo
 
 1. **Calcular métricas de desempenho**, como precisão, recall, F1-score, etc., no conjunto de teste para avaliar o desempenho do modelo.
 
@@ -21,11 +28,11 @@
 
 ---
 
-# Função `learning_curve`
+## Função `learning_curve`
 
 A função `learning_curve` é uma ferramenta do scikit-learn que permite visualizar como o desempenho de um modelo varia com o tamanho do conjunto de treinamento. Ela é útil para entender como o modelo se comporta à medida que é treinado com mais dados e para identificar problemas de **`underfitting`** ou **`overfitting`**.
 
-## Parâmetros Principais:
+### Parâmetros Principais:
 
 - **Estimator**: O estimador ou modelo de machine learning a ser avaliado. Deve ser um objeto que implementa os métodos `fit` e `predict`.
 
@@ -39,7 +46,7 @@ A função `learning_curve` é uma ferramenta do scikit-learn que permite visual
 
 - **Scoring**: A métrica de avaliação a ser usada. Pode ser uma string representando uma métrica integrada do scikit-learn (como 'accuracy', 'precision', 'recall', etc.) ou uma função de pontuação personalizada.
 
-## Saída:
+### Saída:
 
 A função `learning_curve` retorna cinco arrays:
 
@@ -53,7 +60,7 @@ A função `learning_curve` retorna cinco arrays:
 
 - **score_times**: O tempo necessário para avaliar o modelo para cada tamanho de conjunto de treinamento.
 
-## Utilidade:
+### Utilidade:
 
 A função `learning_curve` é útil para:
 
@@ -99,15 +106,13 @@ A análise da curva de aprendizado ajuda a identificar o comportamento do modelo
 
 Imagine que você está treinando um modelo de regressão logística e está monitorando a acurácia da validação ao longo do tempo ou conforme você aumenta a quantidade de dados de treinamento. Inicialmente, a acurácia da validação melhora à medida que você adiciona mais dados, mas eventualmente, ela começa a se estabilizar e atinge um ponto onde não há mais melhorias significativas, mesmo com a adição de mais dados. Esse ponto de estabilização é chamado de **plateau**.
 
+## Leia mais
 
-### Leia mais
+[Learning_Curves](_Notebooks_teoria_aplicada\learning_curves.md)
+[Notebook: Learning_Curves_2](_Notebooks_teoria_aplicada\Learning_curve_2.ipynb)
 
-* [Learning_Curves](_Notebooks_teoria_aplicada\learning_curves.md)
-
-* [Notebook: Learning_Curves_2](_Notebooks_teoria_aplicada\Learning_curve_2.ipynb)
 ---
-3. **Ajuste Adicional (Fine-tuning):** Refinar o modelo, se necessário, com base nos resultados da avaliação.
 
-4. **Implantação:** Implementar o modelo em um ambiente de produção para uso prático, se aplicável.
+# 6.0 Implantação (Deployment)
 
-5. **Monitoramento Contínuo:** Monitorar o desempenho do modelo em produção e realizar atualizações conforme necessário.
+A fase final da metodologia CRISP-DM é a implantação do modelo em um ambiente de produção. Integramos o modelo aos sistemas existentes, monitoramos seu desempenho contínuo e garantimos a adoção pela equipe de negócios.
