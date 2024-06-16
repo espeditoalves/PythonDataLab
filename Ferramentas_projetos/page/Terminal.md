@@ -1,6 +1,6 @@
-- [Configurando Terminais](#configurando-terminais)
+- [Entendendo e Configurações Terminais](#entendendo-e-configurações-terminais)
   - [Terminal Power Shell](#terminal-power-shell)
-  - [Configurações: `PowerShell_profile.ps1`](#configurações-powershell_profileps1)
+    - [Configurações: `PowerShell_profile.ps1`](#configurações-powershell_profileps1)
     - [1. Aliases](#1-aliases)
     - [2. Funções](#2-funções)
     - [3. Importar Módulos](#3-importar-módulos)
@@ -10,19 +10,22 @@
     - [7. Cmdlets de Inicialização](#7-cmdlets-de-inicialização)
     - [8. Funções e Cmdlets de Terceiros](#8-funções-e-cmdlets-de-terceiros)
     - [9. Trabalhando com Credenciais e Senhas](#9-trabalhando-com-credenciais-e-senhas)
-  - [Minha configuração padrao](#minha-configuração-padrao)
-    - [1. Abrir o PowerShell:](#1-abrir-o-powershell)
-    - [2. Editar o Arquivo de Perfil:](#2-editar-o-arquivo-de-perfil)
-    - [3. Digite o seguinte comando e salve e reinicie o terminal](#3-digite-o-seguinte-comando-e-salve-e-reinicie-o-terminal)
+    - [10. Conda no Power Shell](#10-conda-no-power-shell)
   - [Terminal bash](#terminal-bash)
+  - [Minha configuração padrao](#minha-configuração-padrao)
+    - [1. Configurar o `PATH` do Conda para o Power shell](#1-configurar-o-path-do-conda-para-o-power-shell)
+    - [2. Abrir o PowerShell:](#2-abrir-o-powershell)
+    - [3. Editar o Arquivo de Perfil:](#3-editar-o-arquivo-de-perfil)
+    - [4. Digite o seguinte comando e salve e reinicie o terminal](#4-digite-o-seguinte-comando-e-salve-e-reinicie-o-terminal)
+  - [Seeting.json padrão vscode](#seetingjson-padrão-vscode)
 
-# Configurando Terminais
+# Entendendo e Configurações Terminais
 
 ## Terminal Power Shell
 
 O arquivo `PowerShell_profile.ps1` é um script de inicialização que é executado automaticamente sempre que você inicia uma nova sessão do PowerShell. Nele, você pode configurar diversas coisas para personalizar e otimizar seu ambiente de trabalho. 
 
-## Configurações: `PowerShell_profile.ps1`
+### Configurações: `PowerShell_profile.ps1`
 Aqui estão algumas das principais coisas que você pode configurar no seu perfil PowerShell:
 
 ### 1. Aliases
@@ -137,11 +140,36 @@ function prompt {
 
 ```
 
+### 10. Conda no Power Shell
+**Adicionar o Anaconda ao `PATH`:**
+
+Durante a instalação do Anaconda, você geralmente tem a opção de adicionar o Anaconda ao PATH do sistema. Isso permite que o PowerShell (ou qualquer outro terminal) reconheça os comandos do conda sem a necessidade de especificar o caminho completo para o executável.
+
+Se o Anaconda não foi adicionado ao PATH durante a instalação, você pode fazer isso manualmente seguindo estas etapas:
+
+> Abra o PowerShell como `administrador`.
+
+Execute o seguinte comando para adicionar o diretório Scripts do Anaconda ao PATH do usuário atual:
+
+```shell
+[Environment]::SetEnvironmentVariable("PATH", "$env:PATH;C:\Users\SeuUsuario\anaconda3\Scripts", "User")
+```
+>Substitua C:\Users\SeuUsuario\anaconda3\Scripts pelo caminho onde o Anaconda está instalado no seu sistema.
+
+> Substitua `SeuUsuario` por seu `usuario`
+
+
+## Terminal bash
+
 ## Minha configuração padrao
 
 **Passo a Passo**
 
-### 1. Abrir o PowerShell:
+### 1. Configurar o `PATH` do Conda para o Power shell
+    
+Seguir os passos do item [10. Conda no Power Shell](#10-conda-no-power-shell)
+
+### 2. Abrir o PowerShell:
 
 Inicie o PowerShell ou PowerShell ISE ou Power shell do vscode.
 Verificar o Caminho do Arquivo de Perfil:
@@ -151,14 +179,14 @@ Use o seguinte comando para verificar o caminho do seu arquivo de perfil:
 echo $PROFILE
 ```
 
-### 2. Editar o Arquivo de Perfil:
+### 3. Editar o Arquivo de Perfil:
 
 Abra o arquivo de perfil no editor de sua preferência (por exemplo, Notepad):
 ```shell
 notepad $PROFILE
 ```
 
-### 3. Digite o seguinte comando e salve e reinicie o terminal
+### 4. Digite o seguinte comando e salve e reinicie o terminal
 
 ```shell
 # Função personalizada para exibir o prompt do PowerShell
@@ -169,8 +197,15 @@ function prompt {
     # Divide o caminho usando '\' como delimitador e obtém o último segmento
     $folderName = $path.Split('\')[-1]
     
-    # Define o prompt para exibir apenas o nome da pasta atual seguido por '>'
+    # Define o prompt padrão para exibir apenas o nome da pasta atual seguido por '>'
     $prompt = "$folderName> "
+    
+    # Verifica se um ambiente Conda está ativo
+    $condaEnv = $env:CONDA_DEFAULT_ENV
+    if ($condaEnv) {
+        # Se um ambiente Conda estiver ativo, modifica o prompt para indicar isso
+        $prompt = "($condaEnv) $prompt"
+    }
     
     # Escreve o prompt no terminal sem quebrar a linha, e com a cor ciano
     Write-Host -NoNewLine -ForegroundColor Cyan $prompt
@@ -178,15 +213,43 @@ function prompt {
     # Retorna um espaço em branco para que o cursor fique após o prompt personalizado
     return " "
 }
+
 # Mostrar uma mensagem de boas-vindas
 Write-Host "Welcome to your custom PowerShell environment!" -ForegroundColor Green
 
 # Customização das cores do terminal
-$host.UI.RawUI.ForegroundColor = 'Yellow'  # Define a cor do texto do terminal como amarelo
-$host.UI.RawUI.BackgroundColor = 'Black'   # Define a cor de fundo do terminal como preto
+# $host.UI.RawUI.ForegroundColor = 'Yellow'  # Define a cor do texto do terminal como amarelo
+# $host.UI.RawUI.BackgroundColor = 'Black'   # Define a cor de fundo do terminal como preto
 
 # Outras configurações e comandos podem ser adicionados abaixo
 
+
 ```
-## Terminal bash
+## Seeting.json padrão vscode
+```shell
+{
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "vscode-icons",
+
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Anaconda PowerShell Prompt": {
+            "path": "C:\\Users\\esped\\anaconda3\\Scripts\\conda.exe",
+            "args": [],
+            "icon": "terminal-powershell"
+        }
+    },
+    "editor.fontFamily": "'Cascadia Code', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "powershell.integratedConsole.focusConsoleOnExecute": false,
+    "powershell.integratedConsole.showOnStartup": true
+}
+```
+
+
  
