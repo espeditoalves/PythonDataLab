@@ -1,6 +1,4 @@
-- [Configuração do Projeto com Cookiecutter Data Science](#configuração-do-projeto-com-cookiecutter-data-science)
-
-# Configuração do Projeto com Cookiecutter Data Science
+# Configuração do Projeto com Cookiecutter Data Science (ccds)
 
 Durante a configuração do seu projeto usando o Cookiecutter Data Science (CCDS), você pode seguir os passos abaixo:
 

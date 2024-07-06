@@ -2,8 +2,8 @@
 
 - [Principais Ferramentas para Projetos](#principais-ferramentas-para-projetos)
   - [Meus Desenvolvimentos](#meus-desenvolvimentos)
-  - [Cookiecutter Data Science](#cookiecutter-data-science)
   - [Minha estrutura de organização](#minha-estrutura-de-organização)
+  - [Cookiecutter Data Science](#cookiecutter-data-science)
   - [Poetry](#poetry)
     - [Principais Funcionalidades do `poetry`](#principais-funcionalidades-do-poetry)
     - [Vantagens do `poetry`](#vantagens-do-poetry)
@@ -19,88 +19,81 @@
 ## Meus Desenvolvimentos
 Abrindo um novo projeto passo a passo:
 
->1. Criar a estrutura de pastas usando o **Cookiecutter Data Science**
->2. Apagar o arquivo *pyproject.toml*, pois não me atende
->3. Usar o comando poetry init:
-    > Esse comando irá criar um novo *pyproject.toml* com as configurações adequadas para gerenciar o ambiente virtual do meu projeto
+>1. Criar a estrutura de pastas usando o **Cookiecutter**
 
-Após executar esse comandos será necessário configurar o 'ipykernel' para os jupyter notebooks identificarem e executarem as códigos puxando os pacotes do meu ambiente virtual.
+A Ferramenta **Cookiecutter** permite criar uma estrutura de pastas especifica de acordo com template especificado.
 
-> 4. Intalação do ipykernel
->```sh
-> poetry add ipykernel
-> poetry shell
-> # Instala e registra o kernel ipykernel no Jupyter com um nome específico.
-> python -m ipykernel install --user --name=nome_do_seu_projeto --display-name "Python (nome_do_seu_projeto)"
->
->```
+No meu caso utilizado o [data-science-template-espedito](https://github.com/espeditoalves/data-science-template), modificado apartir do [data-science-template](https://github.com/khuyentran1401/data-science-template).
 
-## Cookiecutter Data Science
-   - Template popular para estruturar projetos de ciência de dados de forma organizada e reprodutível.
-   - [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)
-   - [Tutorial/refe](https://cookiecutter.readthedocs.io/en/2.0.2/)
+Após a instalaçao do **Cookiecutter**, basta usar o comando:
+
+```bash
+cookiecutter https://github.com/espeditoalves/data-science-template
+```
+
+
+Após executar esse comando será feito o download do template para uma pasta raiz do cookiecutter, e em seguida  será criada sua pasta com os diretórios definidos no template
 
 ## Minha estrutura de organização
 
-Após a criação das pastas padrão do `**Cookiecutter Data Science**`, eu gosto de reorganizar a minha estrutura da seguinte maneira:
-As marcações com #, indicam que são pastas que criei manualmente, elas não vem como padrão na ferramenta `**Cookiecutter Data Science**`.
-
-```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│   |                      the creator's initials, and a short `-` delimited description, e.g.
-│   |                     `1.0-jqp-initial-data-exploration`.
-│   ├── exploration/       # Notebooks de exploração inicial dos dados
-|   |-- preprocessing      # 
-│   ├── modeling/          # Notebooks de experimentação e modelagem
-│   └── reporting/         # Notebooks usados para gerar relatórios
-│
-├── pyproject.toml     <- Project configuration file with package metadata for titanic_ml_project
-│                         and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-|-- output             #
-|   │── figures        <- Generated graphics and figures to be used in reporting
-|-- |-- predictions    #
-|   ├── reports        <- Generated analysis as HTML, PDF, LaTeX, etc.
-│    
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── Name_project                <- Source code for use in this project.
-    │
-    ├── __init__.py    <- Makes Name_project a Python module
-    │
-    ├── data           <- Scripts to download or generate data
-    │   └── make_dataset.py
-    │
-    ├── features       <- Scripts to turn raw data into features for modeling
-    │   └── build_features.py
-    │
-    ├── models         <- Scripts to train models and then use trained models to make
-    │   │                 predictions
-    │   ├── predict_model.py
-    │   └── train_model.py
-    │
-    └── visualization  <- Scripts to create exploratory and results oriented visualizations
-        └── visualize.py
+```bash
+.
+├── config                      
+│   ├── main.yaml                   # Main configuration file
+│   ├── model                       # Configurations for training model
+│   │   ├── model1.yaml             # First variation of parameters to train model
+│   │   └── model2.yaml             # Second variation of parameters to train model
+│   └── process                     # Configurations for processing data
+│       ├── process1.yaml           # First variation of parameters to process data
+│       └── process2.yaml           # Second variation of parameters to process data
+├── data            
+│   ├── final                       # data after training the model
+│   ├── processed                   # data after processing
+│   └── raw                         # raw data
+├── docs                            # documentation for your project
+├── .gitignore                      # ignore files that cannot commit to Git
+├── Makefile                        # store useful commands to set up the environment
+├── models                          # store models
+├── notebooks                       # store notebooks
+│   ├── exploration
+│   │   └── .gitkeep
+│   ├── modeling
+│   │   └── .gitkeep
+│   ├── preprocessing
+│   │   └── .gitkeep
+│   └── reporting
+│       └── .gitkeep
+├── output                          # store outputs
+│   ├── figures
+│   │   └── .gitkeep
+│   ├── predictions
+│   │   └── .gitkeep
+│   └── reports
+│       └── .gitkeep
+{% if cookiecutter.dependency_manager == "pip" -%}
+├── pyproject.toml                  # Configure black
+{% elif cookiecutter.dependency_manager == "poetry" -%}
+├── .pre-commit-config.yaml         # configurations for pre-commit
+├── pyproject.toml                  # dependencies for poetry
+{%- endif %}
+├── README.md                       # describe your project
+├── src                             # store source code
+│   ├── __init__.py                 # make src a Python module 
+│   ├── process.py                  # process data before training model
+│   ├── train_model.py              # train model
+│   └── utils.py                    # store helper functions
+└── tests                           # store tests
+    ├── __init__.py                 # make tests a Python module 
+    ├── test_process.py             # test functions for process.py
+    └── test_train_model.py         # test functions for train_model.py
 ```
 
+## Cookiecutter Data Science
+- Template popular para estruturar projetos de ciência de dados de forma organizada e reprodutível.
+- [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)
+- [cookiecutter docs](https://cookiecutter.readthedocs.io/en/2.0.2/)
+ - [Estrutura de projeto: Khuyen Tran](https://henriqueajnb.github.io/data-science-escalavel/cap02-estrutura_projeto/sec2-1-introducao.html)
+  
 ## Poetry
 
 O `poetry` é uma ferramenta de gerenciamento de dependências e ambientes virtuais para projetos em Python. Ele simplifica o processo de criação, construção e publicação de projetos Python, proporcionando uma forma mais eficiente e organizada de gerenciar bibliotecas e dependências.
