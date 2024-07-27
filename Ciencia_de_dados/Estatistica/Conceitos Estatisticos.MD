@@ -24,7 +24,7 @@
 
 ## O que é P VALOR?
 
-O valor de p representa a probabilidade de a diferença detectada entre os grupos analisados ter ocorrido ao acaso. 
+O valor de p representa a **probabilidade de a diferença detectada entre os grupos analisados ter ocorrido ao acaso.** 
 
 Então,
 
@@ -39,6 +39,20 @@ Na explicação acima, usamos **“diferença entre os grupos”** como exemplo,
 Para testes como correlação de Pearson e regressão linear, passaríamos a dizer **“relação entre as variáveis”**.
 
 **Referência:** https://estatisticafacil.org/2020/10/06/valor_de_p/
+
+> ### Atente-se para a informação a seguir:
+
+> As definições, entendimentos e explicações que utilizamos aqui, são os mais gerais e amplamente utilizadas em disciplinas básicas de estatística ou bioestatística e livros texto.
+
+> Sendo assim, nestes moldes, de forma geral, o entendimento dos significados se torna mais fácil e lógico para quem não é ligado diretamente com a área de exatas.
+
+> Este entendimento, no entanto, vem sendo criticado por alguns estatísticos e, por conta disto, a *Associação Americana de Estatística* publicou um editorial sobre a **`“significância estatística e o valor de p”`**, com aspectos um pouco diferentes dos retratados aqui.
+
+> Abaixo, uma definição mais precisa, mas ao mesmo tempo menos intuitiva.
+
+>>**O valor de p representa a probabilidade de obtermos um resultado igual (ou mais extremo) ao obtido a partir dos nossos dados, assumindo que a hipótese nula é verdadeira.**
+
+Essa definição será discutida nos tópicos abaixo
 
 ## Hipóteses Estatísticas
 
