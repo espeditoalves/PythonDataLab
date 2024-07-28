@@ -57,4 +57,4 @@ O teste de hipóteses é uma ferramenta crucial da estatística inferencial, pro
 
 **Referência:** https://estatisticafacil.org/estatistica-t/
 
-[Conceitos Estatísticos](Conceitos%20Estatisticos.MD)
+[Conceitos Estatísticos](01_Conceitos%20Estatisticos.md)

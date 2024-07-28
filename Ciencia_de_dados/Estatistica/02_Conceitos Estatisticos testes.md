@@ -11,7 +11,7 @@
     - [2. **Valor de p:**](#2-valor-de-p)
     - [3. **Intervalos de Confiança:**](#3-intervalos-de-confiança)
     - [Relação Integrada:](#relação-integrada)
-  - [Page de Referências:](#page-de-referências)
+  - [Page de Exemplos:](#page-de-exemplos)
 
 # O que é Estatística t, Teste t e Distribuição t?
 
@@ -132,7 +132,7 @@ Em suma, ao **combinar** a estatística-t, o p-valor e os intervalos de confian�
 
 **Referência:** https://estatisticafacil.org/estatistica-t/
 
-## Page de Referências:
+## Page de Exemplos:
 [Conceitos Estatísticos Exemplos](Conceitos%20Estatisticos%20Exemplos.MD)
 
 

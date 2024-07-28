@@ -34,6 +34,8 @@ cookiecutter https://github.com/espeditoalves/data-science-template
 
 Após executar esse comando será feito o download do template para uma pasta raiz do cookiecutter, e em seguida  será criada sua pasta com os diretórios definidos no template
 
+Para ter mais detalhes de como configurar e utilizar a ferramenta acesse o relatório [Estrutura de pastas com cookiecutter](./page/Estrutura_pastas_README.md)
+
 ## Minha estrutura de organização
 
 ```bash
