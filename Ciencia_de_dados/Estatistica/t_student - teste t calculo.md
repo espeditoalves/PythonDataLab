@@ -101,6 +101,21 @@ Para determinar o valor p, utilizamos a tabela de distribuição t de Student. C
 
 - Para $t = 4.389$ e $df = 4$, o valor p é geralmente menor que $0.05$, indicando que existe uma diferença significativa.
 
+### 5.1 Determinar a Região Crítica
+Para um teste t, a região crítica depende do nível de significância ($𝛼$) e do tipo de teste (unilateral ou bilateral). Para um teste t bilateral, a região crítica está nas duas extremidades da distribuição t.
+
+
+
+### **Exemplo Prático**
+
+- **Localize a estatística t calculada:** 4.389
+- **Localize a coluna com o nível de significância desejado** (por exemplo, $𝛼=0.05$ para um teste de duas caudas).
+- **Compare o valor da estatística t com os valores críticos da tabela:**
+
+    Para $𝛼=0.05$ em um teste de duas caudas e 4 graus de liberdade, o valor crítico geralmente é cerca de 2.776.
+    Como $t=4.389$ é maior que o valor crítico de 2.776, isso indica que a estatística t está na região crítica e o valor p é menor que 0.05.
+
+>**Se a sua estatística t calculada (t = 4.389) exceder o valor crítico da tabela t para o nível de significância escolhido, `você rejeita a hipótese nula`. Para testes de duas caudas, você precisa comparar a estatística t com o valor crítico para a região crítica em ambas as extremidades da distribuição.**
 ### Conclusão
 
 - **Valor de t calculado:** 4.389
